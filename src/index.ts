@@ -4,8 +4,10 @@ import { sentry } from '@hono/sentry'
 
 const app = new Hono()
 
-app.use('*',sentry({
-  dsn: process.env.SENTRY_DSN,
+const SENTRY_DSN = "";
+
+app.use('*', sentry({
+  dsn: SENTRY_DSN,
 }))
 
 app.get('/', (c) => {
